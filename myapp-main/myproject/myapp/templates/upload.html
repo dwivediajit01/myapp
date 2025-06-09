@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to get file</title>
+</head>
+<body>
+  
+<br>
+<br>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="file" name="myfile">
+  <button type="submit">Upload</button>
+</form>
+{% if file_url %}
+  <p>File uploaded successfully!</p>
+  <a href="{{ file_url }}">Download</a>
+{% endif %}
+<p><a href="{% url 'owner_page' %}">Go to Owner Page</a></p>
+
+</body>
+</html>
