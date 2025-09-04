@@ -13,9 +13,10 @@ def upload_file(request):
         uploaded_file = UploadedFile.objects.create(file=myfile)
 
     files = UploadedFile.objects.all()  # Get all uploaded files
-    return render(request, 'upload.html', {'files': files})
+    return render(request, 'index.html', {'files': files})
 
 
 def owner_page(request):
     files = UploadedFile.objects.all()  # Fetch all uploaded files
     return render(request, 'owner_page.html', {'files': files})
+
